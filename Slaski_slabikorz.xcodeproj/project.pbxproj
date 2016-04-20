@@ -16,6 +16,7 @@
 		C0BF01A41CC4D01F008ED355 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0BF01A21CC4D01F008ED355 /* Main.storyboard */; };
 		C0BF01A61CC4D5F0008ED355 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0BF01A81CC4D5F0008ED355 /* CollectionViewCell.xib */; };
 		C0BF01D01CC78179008ED355 /* TutorialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BF01CF1CC78179008ED355 /* TutorialController.swift */; };
+		C0FC99F91CC7ACE000FB7387 /* video.mov in Resources */ = {isa = PBXBuildFile; fileRef = C0FC99F81CC7ACE000FB7387 /* video.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C0BF01A31CC4D01F008ED355 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0BF01A71CC4D5F0008ED355 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CollectionViewCell.xib; sourceTree = "<group>"; };
 		C0BF01CF1CC78179008ED355 /* TutorialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialController.swift; sourceTree = "<group>"; };
+		C0FC99F81CC7ACE000FB7387 /* video.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = video.mov; path = ../../../Desktop/video.mov; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				C0BF01CD1CC60D5B008ED355 /* CustomCell */,
 				C0BF01CE1CC60D65008ED355 /* Data */,
 				C0BF018D1CC4C1E4008ED355 /* Assets.xcassets */,
+				C0FC99F81CC7ACE000FB7387 /* video.mov */,
 				C0BF018F1CC4C1E4008ED355 /* LaunchScreen.storyboard */,
 				C0BF01921CC4C1E4008ED355 /* Info.plist */,
 			);
@@ -161,6 +164,7 @@
 				C0BF01911CC4C1E4008ED355 /* LaunchScreen.storyboard in Resources */,
 				C0BF018E1CC4C1E4008ED355 /* Assets.xcassets in Resources */,
 				C0BF01A61CC4D5F0008ED355 /* CollectionViewCell.xib in Resources */,
+				C0FC99F91CC7ACE000FB7387 /* video.mov in Resources */,
 				C0BF01A41CC4D01F008ED355 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
