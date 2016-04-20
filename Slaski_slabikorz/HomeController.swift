@@ -13,6 +13,9 @@ class HomeController: UIViewController {
     //MARK: Outlets
     @IBOutlet var mainCollectionView: UICollectionView!
     @IBOutlet weak var cardImage: UIImageView!
+    @IBOutlet weak var changeLabel: UILabel!
+    
+    var text = String()
     
     //MARK: Data Source
     var silesianWords = Word.selectedWords()
@@ -22,14 +25,32 @@ class HomeController: UIViewController {
     var contentOffsetX: Int = 0
     var contentWidth: Int = 0
     var permissionToChange: Int = 0
+    var karol = NSIndexPath(forItem: 3, inSection: 0)
+
 
     //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //self.mainCollectionView.scrollToItemAtIndexPath(karol, atScrollPosition: .Left, animated: false)
+
+        //mainCollectionView.layoutIfNeeded()
+        //mainCollectionView.setNeedsLayout()
+        //self.mainCollectionView.scrollToItemAtIndexPath(karol, atScrollPosition: .Left, animated: false)
+
+        changeLabel.text = text
         //MARK: Cell register (nib/xib)
         mainCollectionView!.registerNib(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"silesianCell")
         }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.mainCollectionView.scrollToItemAtIndexPath(karol, atScrollPosition: .Left, animated: false)
+    }
+    
+    /*
+    func zmiana(){
+        mainCollectionView .layoutIfNeeded()
+        mainCollectionView.scrollToItemAtIndexPath(karol, atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: true)
+    } */
     
         //MARK: Change cell size (fullscreen)
         func collectionView(_collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -84,14 +105,21 @@ extension HomeController: UICollectionViewDataSource {
         
         cell.silesianWords = self.silesianWords[indexPath.item]
         indexPathNumber = Int(indexPath.item)
+        print(indexPathNumber)
         return cell
     }
+    
+    /*
+    func scrollToItemAtIndexPath(indexPath: NSIndexPath, atScrollPosition scrollPosition: UICollectionViewScrollPosition,
+        animated true: Bool) {
+            return indexPath = 2
+    } */
+    
     
     //MARK: Action after click to cell
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
         collectionView.cellForItemAtIndexPath(indexPath)
-        //actions
     }
 }
 
