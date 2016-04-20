@@ -7,10 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tutorial Controller-->
         <scene sceneID="DVx-zR-bam">
             <objects>
-                <viewController id="FvR-b1-UAW" sceneMemberID="viewController">
+                <viewController id="FvR-b1-UAW" customClass="TutorialController" customModule="Slaski_slabikorz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6nI-ha-wV0"/>
                         <viewControllerLayoutGuide type="bottom" id="92r-Mr-K7o"/>
@@ -22,19 +22,19 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KW7-B5-qi9">
                                 <rect key="frame" x="0.0" y="-8" width="320" height="568"/>
                             </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="text-icon" translatesAutoresizingMaskIntoConstraints="NO" id="dc6-qd-usJ">
+                                <rect key="frame" x="40" y="174" width="240" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="1cc-YR-smC"/>
+                                    <constraint firstAttribute="width" constant="240" id="uNs-jZ-6bR"/>
+                                </constraints>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="ZmE-rm-z5g">
                                 <rect key="frame" x="106" y="64" width="109" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="REO-X5-qYR"/>
                                     <constraint firstAttribute="width" secondItem="ZmE-rm-z5g" secondAttribute="height" multiplier="109:100" id="lzN-s0-wa5"/>
                                     <constraint firstAttribute="width" constant="109" id="zhH-nm-tMg"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="text-icon" translatesAutoresizingMaskIntoConstraints="NO" id="dc6-qd-usJ">
-                                <rect key="frame" x="40" y="174" width="240" height="66"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="66" id="1cc-YR-smC"/>
-                                    <constraint firstAttribute="width" constant="240" id="uNs-jZ-6bR"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v9w-VZ-HpT">
@@ -55,17 +55,31 @@
                                 </constraints>
                                 <color key="pageIndicatorTintColor" red="1" green="0.58711376010000005" blue="0.58169879660000001" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="We8-Xt-5vs">
+                                <rect key="frame" x="40" y="480" width="240" height="45"/>
+                                <color key="backgroundColor" red="1" green="0.090236771895881307" blue="0.33383080618996452" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="We8-Xt-5vs" secondAttribute="height" multiplier="16:3" id="Q8q-YI-a07"/>
+                                </constraints>
+                                <state key="normal" title="Let's start!">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KW7-B5-qi9" firstAttribute="top" secondItem="NTZ-sw-YTJ" secondAttribute="top" id="51f-kw-vKu"/>
+                            <constraint firstItem="92r-Mr-K7o" firstAttribute="top" secondItem="We8-Xt-5vs" secondAttribute="bottom" constant="43" id="7EQ-dP-jzs"/>
                             <constraint firstItem="v9w-VZ-HpT" firstAttribute="centerX" secondItem="NTZ-sw-YTJ" secondAttribute="centerX" id="8aW-R9-U5x"/>
                             <constraint firstItem="rKX-rE-dDy" firstAttribute="top" secondItem="v9w-VZ-HpT" secondAttribute="bottom" constant="9" id="9ei-aR-anf"/>
                             <constraint firstAttribute="trailing" secondItem="KW7-B5-qi9" secondAttribute="trailing" id="Dr2-o9-fIx"/>
+                            <constraint firstItem="We8-Xt-5vs" firstAttribute="centerX" secondItem="NTZ-sw-YTJ" secondAttribute="centerX" id="JZ2-zR-z2t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="We8-Xt-5vs" secondAttribute="trailing" constant="20" id="QWD-eU-1vO"/>
                             <constraint firstItem="v9w-VZ-HpT" firstAttribute="top" secondItem="dc6-qd-usJ" secondAttribute="bottom" constant="24" id="Qs6-T7-Uul"/>
                             <constraint firstItem="ZmE-rm-z5g" firstAttribute="top" secondItem="6nI-ha-wV0" secondAttribute="bottom" constant="44" id="SFG-Ke-wai"/>
                             <constraint firstItem="v9w-VZ-HpT" firstAttribute="leading" secondItem="NTZ-sw-YTJ" secondAttribute="leadingMargin" constant="20" id="aTt-mc-oDv"/>
                             <constraint firstItem="rKX-rE-dDy" firstAttribute="centerX" secondItem="NTZ-sw-YTJ" secondAttribute="centerX" id="kLz-6P-361"/>
+                            <constraint firstItem="We8-Xt-5vs" firstAttribute="leading" secondItem="NTZ-sw-YTJ" secondAttribute="leadingMargin" constant="20" id="lAe-GQ-gJb"/>
                             <constraint firstItem="ZmE-rm-z5g" firstAttribute="centerX" secondItem="NTZ-sw-YTJ" secondAttribute="centerX" id="m5s-8v-jvJ"/>
                             <constraint firstItem="dc6-qd-usJ" firstAttribute="width" secondItem="KW7-B5-qi9" secondAttribute="height" multiplier="30:71" id="mgg-Sd-aS1"/>
                             <constraint firstItem="dc6-qd-usJ" firstAttribute="top" secondItem="ZmE-rm-z5g" secondAttribute="bottom" constant="10" id="pO8-NL-FYQ"/>
@@ -76,6 +90,12 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="pageControll" destination="rKX-rE-dDy" id="CLL-VZ-w48"/>
+                        <outlet property="scrollView" destination="KW7-B5-qi9" id="Dwd-f7-wKb"/>
+                        <outlet property="startButton" destination="We8-Xt-5vs" id="czf-yA-t9h"/>
+                        <outlet property="textView" destination="v9w-VZ-HpT" id="QX9-QJ-8nU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gif-PM-akr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
