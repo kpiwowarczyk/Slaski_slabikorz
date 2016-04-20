@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0D8A602610ABA65B4B842B47020F6AEC2108EA89",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "26C65EBB73791F76D3A67ABD4C5BEE169C09C7EB" : 0,
+    "0D8A602610ABA65B4B842B47020F6AEC2108EA89" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "53356E13-AA3B-4DD4-9F5B-C8AC8EE43D7E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "26C65EBB73791F76D3A67ABD4C5BEE169C09C7EB" : "Slaski_slabikorz\/Slaski_slabikorz\/",
+    "0D8A602610ABA65B4B842B47020F6AEC2108EA89" : "Slaski_slabikorz\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Slaski_slabikorz",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Slaski_slabikorz.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kpiwowarczyk\/Slaski_slabikorz.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0D8A602610ABA65B4B842B47020F6AEC2108EA89"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kpiwowarczyk\/Slaski_slabikorz.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "26C65EBB73791F76D3A67ABD4C5BEE169C09C7EB"
+    }
+  ]
+}
