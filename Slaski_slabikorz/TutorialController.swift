@@ -51,7 +51,7 @@ class TutorialController: UIViewController, UIScrollViewDelegate {
         //MARK: Ustawienie tekstu na widoku 1 oraz dodanie zaokrąglenia do przycisku
         textView.textAlignment = .Center
         textView.text = "Sweettutos.com is your blog of choice for Mobile tutorials"
-        textView.textColor = .blackColor()
+        textView.textColor = .whiteColor()
         self.startButton.layer.cornerRadius = 4.0
         
         //MARK: Dodanie grafik do slajdów oraz ustawienie ich w odpowiednich miejscach (obok siebie)
@@ -85,12 +85,16 @@ class TutorialController: UIViewController, UIScrollViewDelegate {
         
         if Int(currentPage) == 0{
             textView.text = "Sweettutos.com is your blog of choice for Mobile tutorials"
+            textView.textColor = .whiteColor()
         }else if Int(currentPage) == 1{
             textView.text = "I write mobile tutorials mainly targeting iOS"
+            textView.textColor = .whiteColor()
         }else if Int(currentPage) == 2{
             textView.text = "And sometimes I write games tutorials about Unity"
+            textView.textColor = .whiteColor()
         }else{
             textView.text = "Keep visiting sweettutos.com for new coming tutorials, and don't forget to subscribe to be notified by email :)"
+            textView.textColor = .whiteColor()
             // Show the "Let's Start" button in the last slide (with a fade in animation)
             UIView.animateWithDuration(1.0, animations: { () -> Void in
                 self.startButton.alpha = 1.0

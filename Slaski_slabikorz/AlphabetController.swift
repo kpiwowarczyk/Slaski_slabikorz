@@ -43,24 +43,14 @@ class AlphabetController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath.row)
         alphabetIndexPathRow = indexPath.row
+        print(alphabetIndexPathRow)
         //getIndexPathRow()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         let secondViewController:HomeController = segue.destinationViewController as! HomeController
-        secondViewController.itemNumber = 3
+        secondViewController.itemNumber = alphabetIndexPathRow
     }
-    
 }
 
-func getIndexPathRow() {
-    
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        let secondViewController:HomeController = segue.destinationViewController as! HomeController
-        secondViewController.itemNumber = 3
-    }
-}

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qG0-DD-Bf6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FvR-b1-UAW">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -38,14 +38,14 @@
                                     <constraint firstAttribute="width" constant="109" id="zhH-nm-tMg"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v9w-VZ-HpT">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v9w-VZ-HpT">
                                 <rect key="frame" x="40" y="264" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="v9w-VZ-HpT" secondAttribute="height" multiplier="15:8" id="PM3-Cs-ct3"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -114,13 +114,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jyV-Xj-yFx">
                             <size key="itemSize" width="80" height="80"/>
-                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="AWZ-Aj-RVz">
-                                <rect key="frame" x="0.0" y="50" width="80" height="80"/>
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -139,12 +139,11 @@
                                     <constraint firstItem="ZyJ-vI-YPT" firstAttribute="centerY" secondItem="AWZ-Aj-RVz" secondAttribute="centerY" id="GHL-Mh-Gcd"/>
                                     <constraint firstItem="ZyJ-vI-YPT" firstAttribute="centerX" secondItem="AWZ-Aj-RVz" secondAttribute="centerX" id="Utg-DM-BHX"/>
                                 </constraints>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="X77-Qq-Yn8"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="HIy-X6-xcW">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="qG0-DD-Bf6" id="fat-P9-JWz"/>
                             <outlet property="delegate" destination="qG0-DD-Bf6" id="1dh-Jb-wRa"/>
@@ -228,4 +227,7 @@
         <image name="p2" width="1215" height="810"/>
         <image name="text-icon" width="223" height="54"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ugt-2l-sLZ"/>
+    </inferredMetricsTieBreakers>
 </document>
