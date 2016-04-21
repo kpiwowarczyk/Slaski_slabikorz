@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slaski_slabikorz/HomeController.swift"
-            timestampString = "482918902.98943"
+            timestampString = "482930594.242691"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "HomeController"
             landmarkType = "3">
          </BreakpointContent>

@@ -8,24 +8,59 @@
 
 import UIKit
 
-class AlphabetController: UIViewController {
+var alphabetIndexPathRow:Int = 0
+
+class AlphabetController: UICollectionViewController {
     
-    @IBOutlet weak var go: UIButton!
-        
+    var arrayWithAplhabet =  [String]()
+    
         override func viewDidLoad() {
         super.viewDidLoad()
-         
-            // Do any additional setup after loading the view.
+            arrayWithAplhabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "W", "Y", "Z"]
+    }
+    
+    /*
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let secondViewController:HomeController = segue.destinationViewController as! HomeController
+        secondViewController.text = "Karol"
+    }
+*/
+    
+    
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arrayWithAplhabet.count
+    }
+    
+    
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as UICollectionViewCell
+        
+        let button = cell.viewWithTag(1) as! UILabel
+        button.text = arrayWithAplhabet[indexPath.row]
+        cell.backgroundColor = UIColor.redColor()
+        return cell
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
+        print(indexPath.row)
+        alphabetIndexPathRow = indexPath.row
+        //getIndexPathRow()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        //our variable secondViewController is of type VC2 which is the
-        // second view controller, we can access variables put into there
-        // destination VC2
         let secondViewController:HomeController = segue.destinationViewController as! HomeController
+        secondViewController.itemNumber = 3
+    }
+    
+}
+
+func getIndexPathRow() {
+    
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        //secondViewController.mainCollectionView.layoutIfNeeded()
-        secondViewController.mainCollectionView.scrollToItemAtIndexPath(NSIndexPath(forItem:2, inSection:0), atScrollPosition: .CenteredHorizontally, animated: true)
+        let secondViewController:HomeController = segue.destinationViewController as! HomeController
+        secondViewController.itemNumber = 3
     }
 }

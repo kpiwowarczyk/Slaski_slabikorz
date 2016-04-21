@@ -13,9 +13,6 @@ class HomeController: UIViewController {
     //MARK: Outlets
     @IBOutlet var mainCollectionView: UICollectionView!
     @IBOutlet weak var cardImage: UIImageView!
-    @IBOutlet weak var changeLabel: UILabel!
-    
-    var text = String()
     
     //MARK: Data Source
     var silesianWords = Word.selectedWords()
@@ -25,19 +22,20 @@ class HomeController: UIViewController {
     var contentOffsetX: Int = 0
     var contentWidth: Int = 0
     var permissionToChange: Int = 0
-    var karol = NSIndexPath(forItem: 3, inSection: 0)
+    var itemNumber = 0
+    //var selectedItem = NSIndexPath(forItem: liczba, inSection: 0)
 
 
     //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        changeLabel.text = text
         //MARK: Cell register (nib/xib)
         mainCollectionView!.registerNib(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"silesianCell")
         }
     
     override func viewDidAppear(animated: Bool) {
-        self.mainCollectionView.scrollToItemAtIndexPath(karol, atScrollPosition: .Left, animated: true)
+        //itemNumber = itemNumberFromAlphabet
+        self.mainCollectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: itemNumber, inSection: 0), atScrollPosition: .Left, animated: true)
             }
 
     func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
