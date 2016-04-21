@@ -31,26 +31,22 @@ class HomeController: UIViewController {
     //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.mainCollectionView.scrollToItemAtIndexPath(karol, atScrollPosition: .Left, animated: false)
-
-        //mainCollectionView.layoutIfNeeded()
-        //mainCollectionView.setNeedsLayout()
-        //self.mainCollectionView.scrollToItemAtIndexPath(karol, atScrollPosition: .Left, animated: false)
-
         changeLabel.text = text
         //MARK: Cell register (nib/xib)
         mainCollectionView!.registerNib(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"silesianCell")
         }
     
     override func viewDidAppear(animated: Bool) {
-        self.mainCollectionView.scrollToItemAtIndexPath(karol, atScrollPosition: .Left, animated: false)
+        self.mainCollectionView.scrollToItemAtIndexPath(karol, atScrollPosition: .Left, animated: true)
+            }
+
+    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+        if indexPathNumber == 3 {
+            cardImage.image =  UIImage(named: "p5")
+        } else {
+            print("Nie udało się")
+        }
     }
-    
-    /*
-    func zmiana(){
-        mainCollectionView .layoutIfNeeded()
-        mainCollectionView.scrollToItemAtIndexPath(karol, atScrollPosition: UICollectionViewScrollPosition.CenteredHorizontally, animated: true)
-    } */
     
         //MARK: Change cell size (fullscreen)
         func collectionView(_collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -82,7 +78,7 @@ class HomeController: UIViewController {
             cardImage.image =  UIImage(named: "p5")
 
         default:
-            print("")
+            print("bez zmiany obrazka")
         }
     }
 }
@@ -107,6 +103,7 @@ extension HomeController: UICollectionViewDataSource {
         indexPathNumber = Int(indexPath.item)
         print(indexPathNumber)
         return cell
+        
     }
     
     /*
