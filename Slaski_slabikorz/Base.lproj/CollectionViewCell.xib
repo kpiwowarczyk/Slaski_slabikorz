@@ -14,11 +14,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWn-Ns-EpW">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWn-Ns-EpW" customClass="CollectionViewCell2" customModule="Slaski_slabikorz" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="k4" translatesAutoresizingMaskIntoConstraints="NO" id="r3u-Qa-ncx">
+                                <rect key="frame" x="85" y="92" width="131" height="115"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="k3" translatesAutoresizingMaskIntoConstraints="NO" id="Syn-oJ-qAI">
-                                <rect key="frame" x="79" y="79" width="141" height="142"/>
+                                <rect key="frame" x="80" y="79" width="141" height="142"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfL-Up-OCq">
                                 <rect key="frame" x="129" y="139" width="42" height="21"/>
@@ -31,7 +34,9 @@
                         <constraints>
                             <constraint firstItem="Syn-oJ-qAI" firstAttribute="centerY" secondItem="gWn-Ns-EpW" secondAttribute="centerY" id="Gzg-6J-3dc"/>
                             <constraint firstItem="yfL-Up-OCq" firstAttribute="centerY" secondItem="gWn-Ns-EpW" secondAttribute="centerY" id="Ifa-de-Vr1"/>
+                            <constraint firstItem="r3u-Qa-ncx" firstAttribute="centerY" secondItem="gWn-Ns-EpW" secondAttribute="centerY" id="Lqc-39-YZ9"/>
                             <constraint firstItem="Syn-oJ-qAI" firstAttribute="centerX" secondItem="gWn-Ns-EpW" secondAttribute="centerX" id="dqB-xS-Zd1"/>
+                            <constraint firstItem="r3u-Qa-ncx" firstAttribute="centerX" secondItem="gWn-Ns-EpW" secondAttribute="centerX" id="tOG-R9-Adi"/>
                             <constraint firstItem="yfL-Up-OCq" firstAttribute="centerX" secondItem="gWn-Ns-EpW" secondAttribute="centerX" id="uzJ-sm-t1E"/>
                         </constraints>
                     </view>
@@ -46,7 +51,9 @@
             </constraints>
             <size key="customSize" width="228" height="218"/>
             <connections>
+                <outlet property="cardView" destination="gWn-Ns-EpW" id="smo-lZ-aeN"/>
                 <outlet property="silesianImage" destination="Syn-oJ-qAI" id="RiE-nv-jWb"/>
+                <outlet property="silesianImageBack" destination="r3u-Qa-ncx" id="0eI-gH-a4R"/>
                 <outlet property="silesianLabel" destination="yfL-Up-OCq" id="pUv-Jg-1nM"/>
             </connections>
             <point key="canvasLocation" x="380" y="309"/>
@@ -54,5 +61,6 @@
     </objects>
     <resources>
         <image name="k3" width="141" height="142"/>
+        <image name="k4" width="141" height="142"/>
     </resources>
 </document>

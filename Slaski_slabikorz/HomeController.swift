@@ -29,9 +29,17 @@ class HomeController: UIViewController {
     //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //MARK: Cell register (nib/xib)
         mainCollectionView!.registerNib(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"silesianCell")
+
         }
+    
+    var selectedIndexes = [NSIndexPath]() {
+        didSet {
+            mainCollectionView.reloadData()
+        }
+    }
     
     override func viewDidAppear(animated: Bool) {
         //itemNumber = itemNumberFromAlphabet
@@ -45,6 +53,14 @@ class HomeController: UIViewController {
             print("Nie udało się")
         }
     }
+    
+    
+    func handleTap(sender: UITapGestureRecognizer? = nil) {
+        // just creating an alert to prove our tap worked!
+        let tapAlert = UIAlertController(title: "hmmm...", message: "this actually worked?", preferredStyle: UIAlertControllerStyle.Alert)
+        tapAlert.addAction(UIAlertAction(title: "OK", style: .Destructive, handler: nil))
+        self.presentViewController(tapAlert, animated: true, completion: nil)
+    } 
     
         //MARK: Change cell size (fullscreen)
         func collectionView(_collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -92,16 +108,35 @@ extension HomeController: UICollectionViewDataSource {
         return silesianWords.count
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
+        // ...
+        if let indexSelecionado = selectedIndexes.indexOf(indexPath) {
+            selectedIndexes.removeAtIndex(indexSelecionado)
+        } else {
+            selectedIndexes.append(indexPath)
+        }
+    }
+    
     //MARK: Date to cells
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("silesianCell", forIndexPath: indexPath)
             as! CollectionViewCell
         
         cell.silesianWords = self.silesianWords[indexPath.item]
         indexPathNumber = Int(indexPath.item)
-        print(indexPathNumber)
-        return cell
         
+        if self.selectedIndexes.indexOf(indexPath) == nil {
+            print("1")
+        } else {
+            print("2")
+        }
+        return cell
+        //print(indexPathNumber)
+        
+        //let tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
+        //cell.userInteractionEnabled = true
+        //cell.addGestureRecognizer(tap)
     }
     
     /*
@@ -111,12 +146,7 @@ extension HomeController: UICollectionViewDataSource {
     } */
     
     
-    //MARK: Action after click to cell
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
-    {
-        collectionView.cellForItemAtIndexPath(indexPath)
     }
-}
 
 
 //MARK: Calculation scrollView size (all cell's width), contentOffest.x
