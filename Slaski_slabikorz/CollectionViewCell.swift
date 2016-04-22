@@ -11,25 +11,34 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
     
-    @IBOutlet weak var silesianImage: UIImageView!
+    @IBOutlet var silesianImage: UIImageView!
     @IBOutlet weak var silesianLabel: UILabel!
-    @IBOutlet weak var cardView: UIView!
-    @IBOutlet weak var silesianImageBack: UIImageView!
+    @IBOutlet var cardView: UIView!
+    @IBOutlet var silesianImageBack: UIImageView!
     
     //var silesianImageBack: UIImageView!
     var showingBack = true
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("Karol")
+        //print("Karol")
         
         let tap = UITapGestureRecognizer(target: self, action: Selector("handleTap:"))
         tap.numberOfTapsRequired = 1
         cardView.userInteractionEnabled = true
         cardView.addGestureRecognizer(tap)
-        print(showingBack)
+        //print(showingBack)
+
         
         
+    }
+    
+    var silesianWords: Word! {
+        didSet {
+            silesianImage.image = silesianWords.featuredImage
+            silesianLabel.text = silesianWords.title
+            silesianImageBack.image = silesianWords.backImage
+        }
     }
     
     func handleTap(sender: UITapGestureRecognizer? = nil) {
@@ -40,21 +49,12 @@ class CollectionViewCell: UICollectionViewCell, UIGestureRecognizerDelegate {
             showingBack = false
             print(showingBack)
 
-            silesianImage.image = silesianWords.featuredImage
-
-        } else {
+        } else if (showingBack == false) {
             print("Karol2")
-            UIView.transitionFromView(silesianImageBack, toView: silesianImageBack, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromLeft, completion: nil)
+            UIView.transitionFromView(silesianImageBack, toView: silesianImage, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromLeft, completion: nil)
             showingBack = true
-        }
-    }
-    
-    
-    var silesianWords: Word! {
-        didSet {
-            silesianImage.image = silesianWords.featuredImage
-            silesianLabel.text = silesianWords.title
-            silesianImageBack.image = silesianWords.backImage
+            print(showingBack)
+
         }
     }
     
