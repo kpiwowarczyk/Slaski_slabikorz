@@ -8,14 +8,17 @@
 
 import UIKit
 
+
 class HomeController: UIViewController {
     
     //MARK: Outlets
     @IBOutlet var mainCollectionView: UICollectionView!
     @IBOutlet weak var cardImage: UIImageView!
-    
+
     //MARK: Data Source
     var silesianWords = Word.selectedWords()
+    var imageFromCell = CollectionViewCell()
+
     
     //MARK: Variables
     var indexPathNumber:Int = 0
@@ -23,17 +26,19 @@ class HomeController: UIViewController {
     var contentWidth: Int = 0
     var permissionToChange: Int = 0
     var itemNumber = 0
-    //var selectedItem = NSIndexPath(forItem: liczba, inSection: 0)
-
-
     //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+
         
         //MARK: Cell register (nib/xib)
         mainCollectionView!.registerNib(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"silesianCell")
+        
+        
 
         }
+
+    
     
     var selectedIndexes = [NSIndexPath]() {
         didSet {
@@ -41,26 +46,28 @@ class HomeController: UIViewController {
         }
     }
     
+    
+    
+    
+    
     override func viewDidAppear(animated: Bool) {
         //itemNumber = itemNumberFromAlphabet
         self.mainCollectionView.scrollToItemAtIndexPath(NSIndexPath(forItem: itemNumber, inSection: 0), atScrollPosition: .Left, animated: true)
+        
+        
             }
 
     func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+        print("koniec animacji")
         if indexPathNumber == 3 {
             cardImage.image =  UIImage(named: "p5")
         } else {
             print("Nie udało się")
         }
+        
+        
+        
     }
-    
-    
-    func handleTap(sender: UITapGestureRecognizer? = nil) {
-        // just creating an alert to prove our tap worked!
-        let tapAlert = UIAlertController(title: "hmmm...", message: "this actually worked?", preferredStyle: UIAlertControllerStyle.Alert)
-        tapAlert.addAction(UIAlertAction(title: "OK", style: .Destructive, handler: nil))
-        self.presentViewController(tapAlert, animated: true, completion: nil)
-    } 
     
         //MARK: Change cell size (fullscreen)
         func collectionView(_collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -70,10 +77,12 @@ class HomeController: UIViewController {
         //MARK: Check access to change background image
         func checkTrueNumberOffVisibleCell() {
         if (indexPathNumber * contentWidth) == contentOffsetX {
+            print("Można zmienić")
             permissionToChange = 1
-            //print("Access \(permissionToChange)")
+            
         } else {
             permissionToChange = 0
+            print("Nie można zmienić")
             //print("Not access \(permissionToChange)")
             }
         }
@@ -92,7 +101,7 @@ class HomeController: UIViewController {
             cardImage.image =  UIImage(named: "p5")
 
         default:
-            print("bez zmiany obrazka")
+            print("")
         }
     }
 }
@@ -109,12 +118,12 @@ extension HomeController: UICollectionViewDataSource {
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
-        // ...
         if let indexSelecionado = selectedIndexes.indexOf(indexPath) {
             selectedIndexes.removeAtIndex(indexSelecionado)
         } else {
             selectedIndexes.append(indexPath)
         }
+        
     }
     
     //MARK: Date to cells
@@ -127,9 +136,9 @@ extension HomeController: UICollectionViewDataSource {
         indexPathNumber = Int(indexPath.item)
         
         if self.selectedIndexes.indexOf(indexPath) == nil {
-            print("1")
+            //print("1")
         } else {
-            print("2")
+            //print("2")
         }
         return cell
         //print(indexPathNumber)
@@ -139,12 +148,39 @@ extension HomeController: UICollectionViewDataSource {
         //cell.addGestureRecognizer(tap)
     }
     
+    func collectionView(collectionView: UICollectionView,
+        didHighlightItemAtIndexPath indexPath: NSIndexPath) {
+            print(indexPathNumber)
+    }
+    
     /*
     func scrollToItemAtIndexPath(indexPath: NSIndexPath, atScrollPosition scrollPosition: UICollectionViewScrollPosition,
         animated true: Bool) {
             return indexPath = 2
     } */
     
+    
+    func flipImage() {
+        if (GlobalVariable.showingBack == false) {
+            print("Widać tył")
+    
+            UIView.transitionFromView(GlobalVariable.silesianImageBackGlobal, toView: GlobalVariable.silesianImageGlobal, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromLeft, completion: nil)
+                GlobalVariable.showingBack = true
+            
+            /*GlobalVariable.silesianImageGlobal.centerXAnchor.constraintEqualToAnchor(cardImage.centerXAnchor).active = true
+            GlobalVariable.silesianImageGlobal.centerYAnchor.constraintEqualToAnchor(cardImage.centerYAnchor).active = true */
+            
+            GlobalVariable.silesianImageGlobal.frame = CGRectMake(((view.frame.size.width  / 2) - (GlobalVariable.silesianImageGlobal.image!.size.width / 2)), ((view.frame.size.height / 2) - (GlobalVariable.silesianImageGlobal.image!.size.height / 2)), 141, 141)
+            
+            GlobalVariable.silesianImageBackGlobal.frame = CGRectMake(((view.frame.size.width  / 2) - (GlobalVariable.silesianImageBackGlobal.image!.size.width / 2)), ((view.frame.size.height / 2) - (GlobalVariable.silesianImageBackGlobal.image!.size.height / 2)), 141, 141)
+            
+                   } else if (GlobalVariable.showingBack == true){
+            print("Widać przód")
+            
+        }
+
+    }
+   
     
     }
 
@@ -159,7 +195,27 @@ extension HomeController : UIScrollViewDelegate
             
             checkTrueNumberOffVisibleCell()
             changeBackground()
+
+            
+
         }
+    }
+    
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        //GlobalVariable.myStuct.hidden = true
+        print("Przód - \(GlobalVariable.showingBack)")
+        
+        /*
+        if (GlobalVariable.showingBack == false) {
+        UIView.transitionFromView(GlobalVariable.silesianImageBackGlobal, toView: GlobalVariable.silesianImageGlobal, duration: 1, options: UIViewAnimationOptions.TransitionFlipFromLeft, completion: nil)
+             GlobalVariable.showingBack = true
+        } */
+        /*
+        GlobalVariable.silesianImageGlobal.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor).active = true
+        GlobalVariable.silesianImageGlobal.centerYAnchor.constraintEqualToAnchor(view.centerYAnchor).active = true
+            GlobalVariable.showingBack = true
+        } */
+        
     }
 }
 

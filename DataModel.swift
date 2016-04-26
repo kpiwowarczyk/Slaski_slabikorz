@@ -29,10 +29,10 @@ class Word
     static func selectedWords() -> [Word]
     {
         return [
-            Word(id: "k1", title: "p2", featuredImage: UIImage(named: "k1"), backImage: UIImage(named: "k4")!),
-            Word(id: "k2", title: "p3", featuredImage: UIImage(named: "k2"), backImage: UIImage(named: "k4")!),
+            Word(id: "k1", title: "p2", featuredImage: UIImage(named: "k1"), backImage: UIImage(named: "k2")!),
+            Word(id: "k2", title: "p3", featuredImage: UIImage(named: "k2"), backImage: UIImage(named: "k3")!),
             Word(id: "k3", title: "p4", featuredImage: UIImage(named: "k3"), backImage: UIImage(named: "k4")!),
-            Word(id: "k4", title: "p5", featuredImage: UIImage(named: "k4"), backImage: UIImage(named: "k4")!),
+            //Word(id: "k4", title: "p5", featuredImage: UIImage(named: "k4"), backImage: UIImage(named: "k4")!),
         ]
     }
 }
