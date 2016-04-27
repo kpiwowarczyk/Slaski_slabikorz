@@ -8,71 +8,61 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="silesianCell" id="Apg-Ky-TJi" customClass="CollectionViewCell" customModule="Slaski_slabikorz" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <rect key="frame" x="0.0" y="0.0" width="352" height="359"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                <rect key="frame" x="0.0" y="0.0" width="352" height="359"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWn-Ns-EpW" customClass="CollectionViewCell2" customModule="Slaski_slabikorz" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dw2-SZ-Zbl">
+                        <rect key="frame" x="155" y="302" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q0N-2K-iEu">
+                        <rect key="frame" x="0.0" y="0.0" width="352" height="359"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="k4" translatesAutoresizingMaskIntoConstraints="NO" id="r3u-Qa-ncx">
-                                <rect key="frame" x="80" y="79" width="141" height="142"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4iE-hr-9yS">
+                                <rect key="frame" x="166" y="170" width="20" height="20"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="k3" translatesAutoresizingMaskIntoConstraints="NO" id="Syn-oJ-qAI">
-                                <rect key="frame" x="80" y="79" width="141" height="142"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dem-a8-ei6">
+                                <rect key="frame" x="166" y="170" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="EFz-aZ-bXK"/>
+                                    <constraint firstAttribute="width" constant="20" id="Pih-p0-beI"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfL-Up-OCq">
-                                <rect key="frame" x="31" y="254" width="239" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Syn-oJ-qAI" firstAttribute="centerX" secondItem="gWn-Ns-EpW" secondAttribute="centerX" id="2w5-ex-Ok1"/>
-                            <constraint firstItem="yfL-Up-OCq" firstAttribute="centerY" secondItem="gWn-Ns-EpW" secondAttribute="centerY" id="Ext-ZW-8wh"/>
-                            <constraint firstItem="Syn-oJ-qAI" firstAttribute="centerY" secondItem="gWn-Ns-EpW" secondAttribute="centerY" id="GCz-x3-SxF"/>
-                            <constraint firstItem="r3u-Qa-ncx" firstAttribute="centerX" secondItem="gWn-Ns-EpW" secondAttribute="centerX" id="Np6-5G-erk"/>
-                            <constraint firstItem="r3u-Qa-ncx" firstAttribute="centerY" secondItem="gWn-Ns-EpW" secondAttribute="centerY" id="RmV-2a-1cY"/>
-                            <constraint firstItem="yfL-Up-OCq" firstAttribute="centerX" secondItem="gWn-Ns-EpW" secondAttribute="centerX" id="cN8-5E-Egm"/>
-                            <constraint firstItem="yfL-Up-OCq" firstAttribute="centerX" secondItem="gWn-Ns-EpW" secondAttribute="centerX" id="fwr-Dk-8s9"/>
-                            <constraint firstAttribute="bottom" secondItem="yfL-Up-OCq" secondAttribute="bottom" constant="40" id="ipV-zZ-Kec"/>
+                            <constraint firstItem="4iE-hr-9yS" firstAttribute="centerX" secondItem="Q0N-2K-iEu" secondAttribute="centerX" id="7Me-RX-2IM"/>
+                            <constraint firstItem="dem-a8-ei6" firstAttribute="top" secondItem="4iE-hr-9yS" secondAttribute="top" id="BQC-gH-UKk"/>
+                            <constraint firstItem="dem-a8-ei6" firstAttribute="centerY" secondItem="Q0N-2K-iEu" secondAttribute="centerY" id="MfW-L0-TpM"/>
+                            <constraint firstItem="dem-a8-ei6" firstAttribute="leading" secondItem="4iE-hr-9yS" secondAttribute="leading" id="ad8-H0-bu5"/>
+                            <constraint firstItem="dem-a8-ei6" firstAttribute="centerX" secondItem="Q0N-2K-iEu" secondAttribute="centerX" id="dR2-Yi-5Jd"/>
+                            <constraint firstItem="4iE-hr-9yS" firstAttribute="centerY" secondItem="Q0N-2K-iEu" secondAttribute="centerY" id="iXH-yQ-DvL"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Ext-ZW-8wh"/>
-                                <exclude reference="cN8-5E-Egm"/>
-                            </mask>
-                        </variation>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="gWn-Ns-EpW" secondAttribute="bottom" id="0qu-hQ-QMI"/>
-                <constraint firstItem="gWn-Ns-EpW" firstAttribute="top" secondItem="Apg-Ky-TJi" secondAttribute="top" id="518-bB-wao"/>
-                <constraint firstItem="gWn-Ns-EpW" firstAttribute="top" secondItem="Apg-Ky-TJi" secondAttribute="top" id="JN9-Ew-oMd"/>
-                <constraint firstItem="gWn-Ns-EpW" firstAttribute="leading" secondItem="Apg-Ky-TJi" secondAttribute="leading" id="Mo1-aR-7rt"/>
-                <constraint firstAttribute="trailing" secondItem="gWn-Ns-EpW" secondAttribute="trailing" id="QWh-yG-yxf"/>
-                <constraint firstItem="gWn-Ns-EpW" firstAttribute="leading" secondItem="Apg-Ky-TJi" secondAttribute="leading" id="Z1Y-9G-XlQ"/>
-                <constraint firstAttribute="trailing" secondItem="gWn-Ns-EpW" secondAttribute="trailing" id="kex-dc-tHB"/>
-                <constraint firstAttribute="bottom" secondItem="gWn-Ns-EpW" secondAttribute="bottom" id="lJs-47-JXV"/>
+                <constraint firstItem="Q0N-2K-iEu" firstAttribute="leading" secondItem="Apg-Ky-TJi" secondAttribute="leading" id="Hbo-g9-gcx"/>
+                <constraint firstAttribute="trailing" secondItem="Q0N-2K-iEu" secondAttribute="trailing" id="cnn-TA-LDj"/>
+                <constraint firstAttribute="bottom" secondItem="Q0N-2K-iEu" secondAttribute="bottom" id="gGG-4D-IWW"/>
+                <constraint firstItem="Q0N-2K-iEu" firstAttribute="top" secondItem="Apg-Ky-TJi" secondAttribute="top" id="m2x-AB-4sJ"/>
+                <constraint firstAttribute="bottom" secondItem="dw2-SZ-Zbl" secondAttribute="bottom" constant="36" id="ns6-cJ-eLk"/>
+                <constraint firstItem="dw2-SZ-Zbl" firstAttribute="centerX" secondItem="Apg-Ky-TJi" secondAttribute="centerX" id="sfQ-VU-kDQ"/>
             </constraints>
-            <size key="customSize" width="228" height="218"/>
+            <size key="customSize" width="280" height="277"/>
             <connections>
-                <outlet property="cardView" destination="gWn-Ns-EpW" id="smo-lZ-aeN"/>
-                <outlet property="silesianImage" destination="Syn-oJ-qAI" id="RiE-nv-jWb"/>
-                <outlet property="silesianImageBack" destination="r3u-Qa-ncx" id="0eI-gH-a4R"/>
-                <outlet property="silesianLabel" destination="yfL-Up-OCq" id="pUv-Jg-1nM"/>
+                <outlet property="cardView" destination="Q0N-2K-iEu" id="Xoo-HS-bbh"/>
+                <outlet property="silesianImage" destination="4iE-hr-9yS" id="tb4-Ft-6T5"/>
+                <outlet property="silesianImageBack" destination="dem-a8-ei6" id="TSw-Wf-Jyz"/>
+                <outlet property="silesianLabel" destination="dw2-SZ-Zbl" id="8jp-oI-vTj"/>
             </connections>
-            <point key="canvasLocation" x="380" y="309"/>
+            <point key="canvasLocation" x="406" y="338.5"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="k3" width="141" height="142"/>
-        <image name="k4" width="141" height="142"/>
-    </resources>
 </document>

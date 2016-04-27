@@ -9,20 +9,26 @@
 import UIKit
 
 
-struct GlobalVariable {
+
+    
+    struct GlobalVariable {
     static var silesianImageGlobal = UIImageView()
     static var silesianImageBackGlobal = UIImageView()
     static var showingBack = true
-}
+    }
 
-
-class CollectionViewCell: UICollectionViewCell{
-    
+    class CollectionViewCell: UICollectionViewCell, UIScrollViewDelegate {
+        
+        @IBOutlet var cardView: UIView!
+        @IBOutlet var silesianImageBack: UIImageView!
+        @IBOutlet var silesianImage: UIImageView!
+        @IBOutlet var silesianLabel: UILabel!
+    /*
     @IBOutlet var silesianImage: UIImageView!
     @IBOutlet weak var silesianLabel: UILabel!
     @IBOutlet weak var cardView: UIView!
-    @IBOutlet var silesianImageBack: UIImageView!
-    
+    @IBOutlet var silesianImageBack: 
+*/
     
     //var silesianImageBack: UIImageView!
     
@@ -53,8 +59,8 @@ class CollectionViewCell: UICollectionViewCell{
             //GlobalVariable.myStuct.append(silesianLabel.text!)
             
             //GlobalVariable.myStuct.append(silesianLabel.text)
-            GlobalVariable.silesianImageGlobal = silesianImage
-            GlobalVariable.silesianImageBackGlobal = silesianImageBack
+            //GlobalVariable.silesianImageGlobal = silesianImage
+            //GlobalVariable.silesianImageBackGlobal = silesianImageBack
             //print(GlobalVariable.myStuct)
         }
     }
@@ -83,9 +89,9 @@ class CollectionViewCell: UICollectionViewCell{
         }
     }
     
-    /*required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-    } */
+    }
     
 }
 

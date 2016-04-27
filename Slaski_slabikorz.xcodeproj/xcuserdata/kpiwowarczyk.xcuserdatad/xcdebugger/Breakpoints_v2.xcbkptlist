@@ -26,76 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Slaski_slabikorz/HomeController.swift"
-            timestampString = "483359699.552983"
+            timestampString = "483377642.337851"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "HomeController"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Slaski_slabikorz/CollectionViewCell.swift"
-            timestampString = "483361270.09086"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "CollectionViewCell"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Slaski_slabikorz.CollectionViewCell.CollectionView.__deallocating_deinit"
-                  moduleName = "Slaski_slabikorz"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kpiwowarczyk/Documents/Slaski_slabikorz/Slaski_slabikorz/CollectionViewCell.swift"
-                  timestampString = "483004577.602002"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Slaski_slabikorz.CollectionViewCell.CollectionView.init (Slaski_slabikorz.CollectionViewCell.CollectionView.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; Slaski_slabikorz.CollectionViewCell.CollectionView"
-                  moduleName = "Slaski_slabikorz"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kpiwowarczyk/Documents/Slaski_slabikorz/Slaski_slabikorz/CollectionViewCell.swift"
-                  timestampString = "483004577.604311"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "57">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Slaski_slabikorz.CollectionViewCell.CollectionView.init (Slaski_slabikorz.CollectionViewCell.CollectionView.Type)(coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;Slaski_slabikorz.CollectionViewCell.CollectionView&gt;"
-                  moduleName = "Slaski_slabikorz"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kpiwowarczyk/Documents/Slaski_slabikorz/Slaski_slabikorz/CollectionViewCell.swift"
-                  timestampString = "483004577.604509"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

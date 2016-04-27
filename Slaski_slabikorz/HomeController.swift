@@ -8,16 +8,24 @@
 
 import UIKit
 
+struct GlobalVariable2 {
+    static var mainCollectionViewWidth = CGFloat()
+    static var mainCollectionViewHeight = CGFloat()
+    static var viewVersion = 0
+}
+
+
 
 class HomeController: UIViewController {
     
     //MARK: Outlets
     @IBOutlet var mainCollectionView: UICollectionView!
     @IBOutlet weak var cardImage: UIImageView!
+    
 
     //MARK: Data Source
     var silesianWords = Word.selectedWords()
-    var imageFromCell = CollectionViewCell()
+    //var imageFromCell = CollectionViewCell()
 
     
     //MARK: Variables
@@ -29,8 +37,7 @@ class HomeController: UIViewController {
     //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+            
         //MARK: Cell register (nib/xib)
         mainCollectionView!.registerNib(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier:"silesianCell")
         
@@ -71,18 +78,21 @@ class HomeController: UIViewController {
     
         //MARK: Change cell size (fullscreen)
         func collectionView(_collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+            GlobalVariable2.mainCollectionViewHeight =  self.mainCollectionView.frame.size.height
+            GlobalVariable2.mainCollectionViewWidth =  self.mainCollectionView.frame.size.width
             return self.mainCollectionView.frame.size;
         }
+    
     
         //MARK: Check access to change background image
         func checkTrueNumberOffVisibleCell() {
         if (indexPathNumber * contentWidth) == contentOffsetX {
-            print("Można zmienić")
+            //print("Można zmienić")
             permissionToChange = 1
             
         } else {
             permissionToChange = 0
-            print("Nie można zmienić")
+            //print("Nie można zmienić")
             //print("Not access \(permissionToChange)")
             }
         }
@@ -160,7 +170,7 @@ extension HomeController: UICollectionViewDataSource {
     } */
     
     
-    func flipImage() {
+    /* func flipImage() {
         if (GlobalVariable.showingBack == false) {
             print("Widać tył")
     
@@ -179,7 +189,7 @@ extension HomeController: UICollectionViewDataSource {
             
         }
 
-    }
+    } */
    
     
     }
@@ -202,8 +212,74 @@ extension HomeController : UIScrollViewDelegate
     }
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        
+        
+
+        }
+        
+        
+        
+        // set a transition style
+        //let transitionOptions = UIViewAnimationOptions.TransitionFlipFromLeft
+        
+        // with no animation block, and a completion block set to 'nil' this makes a single line of code
+        //UIView.transitionFromView(views.frontView, toView: views.backView, duration: 1.0, options: transitionOptions, completion: nil)
+
+        
+        
+        
+        
+        //GlobalVariable.GlobalredSquare.backgroundColor = UIColor.greenColor()
+        /*var views : (frontView: UIView, backView: UIView)
+        
+        if((GlobalVariable.GlobalredSquare.superview) != nil){
+            views = (frontView: GlobalVariable.GlobalredSquare, backView: GlobalVariable.GlobalblueSquare)
+        }
+        else {
+            views = (frontView: GlobalVariable.GlobalblueSquare, backView: GlobalVariable.GlobalredSquare)
+        }
+        
+        // set a transition style
+        let transitionOptions = UIViewAnimationOptions.TransitionFlipFromLeft
+        
+        // with no animation block, and a completion block set to 'nil' this makes a single line of code
+        UIView.transitionFromView(views.frontView, toView: views.backView, duration: 1.0, options: transitionOptions, completion: nil) */
+        
+        /*var views : (frontView: UIView, backView: UIView)
+        
+        if((GlobalVariable.GlobalredSquare.superview) != nil){
+            views = (frontView: GlobalVariable.GlobalredSquare, backView: GlobalVariable.GlobalblueSquare)
+        }
+        else {
+            views = (frontView: GlobalVariable.GlobalblueSquare, backView: GlobalVariable.GlobalredSquare)
+        } */
+        
+        /*if GlobalVariable2.viewVersion == 1 {
+            GlobalVariable2.viewVersion = 0
+
+            print("Zmieniam")
+            //print(GlobalVariable2.viewVersion)
+            let transitionOptions = UIViewAnimationOptions.TransitionFlipFromLeft
+
+            UIView.transitionFromView(GlobalVariable.GlobalblueSquare, toView: GlobalVariable.GlobalredSquare, duration: 0.0, options: transitionOptions, completion: nil)
+        } else {
+            print(GlobalVariable2.viewVersion)
+            GlobalVariable2.viewVersion = 0
+
+            //GlobalVariable2.viewVersion = 0
+            print("Nic się nie dzieje")
+        } */
+        
+       
+        
+        // with no animation block, and a completion block set to 'nil' this makes a single line of code
+        //UIView.transitionFromView(views.frontView, toView: views.backView, duration: 1.0, options: transitionOptions, completion: nil)
+
+
+        
+        
         //GlobalVariable.myStuct.hidden = true
-        print("Przód - \(GlobalVariable.showingBack)")
+        //print("Przód - \(GlobalVariable.showingBack)")
         
         /*
         if (GlobalVariable.showingBack == false) {
@@ -217,7 +293,7 @@ extension HomeController : UIScrollViewDelegate
         } */
         
     }
-}
+
 
 
 
